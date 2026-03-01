@@ -1,0 +1,201 @@
+id,complaint_title,complaint_description,category,priority
+1,Road pothole / surface damage,Small pothole in residential street Station Road,infrastructure,LOW
+2,Noise complaint (construction/event/neighbors),Noise complaint from construction site in North District,environment,MEDIUM
+3,Street light flickering / low visibility,Public fountain not working at Bus Terminal,public_property,MEDIUM
+4,Fallen tree / blocked sidewalk,Suggestion to repaint crosswalk lines on Oak Street,traffic,LOW
+5,Street light flickering / low visibility,Streetlight flickering intermittently on Station Road,lighting,MEDIUM
+6,Water leakage / pipe burst,"Water contamination suspected in East Side, residents reporting illness",utilities,HIGH
+7,Safety hazard (gas smell / exposed wires / sparks),"Exposed live wires on Corso Italia, immediate hazard",safety,HIGH
+8,Overflowing bins / dirty public area,Overflowing trash bins near General Hospital,sanitation,MEDIUM
+9,Noise complaint (construction/event/neighbors),Noise complaint about loud music at event in Main Square,environment,LOW
+10,Water leakage / pipe burst,"Water contamination suspected in South District, residents reporting illness",utilities,HIGH
+11,"Public property damage (bench, fence, playground)",Playground equipment damaged at Riverside Walk,public_property,MEDIUM
+12,Road pothole / surface damage,Public park grass needs trimming at Community Center,environment,LOW
+13,Illegal dumping / waste on street,Repeated complaints about slow service at municipal office Central Park,administrative,MEDIUM
+14,Fallen tree / blocked sidewalk,Request to replace decorative lights in Central Park,lighting,LOW
+15,Illegal dumping / waste on street,Request to replace decorative lights in Public Library,lighting,LOW
+16,Road collapse / sinkhole,"Road collapse reported near Train Station, traffic blocked",infrastructure,HIGH
+17,Road pothole / surface damage,Complaint about stray cats in Downtown,environment,LOW
+18,Street light not working,Request for additional street lighting in West End,lighting,LOW
+19,Water leakage / pipe burst,Burst hydrant creating flooding near Sports Complex,utilities,HIGH
+20,Fallen tree / blocked sidewalk,Tree branches obstructing sidewalk near Bus Terminal,environment,MEDIUM
+21,Road collapse / sinkhole,"Road collapse reported near Public Library, traffic blocked",infrastructure,HIGH
+22,Traffic light malfunction,Request for additional recycling bin in Train Station,sanitation,LOW
+23,Stray animals causing disturbance,"Sidewalk uneven on Main Avenue, risk of trips",infrastructure,MEDIUM
+24,Street light flickering / low visibility,Public square lighting malfunction at Primary School,lighting,MEDIUM
+25,Overflowing bins / dirty public area,Complaint about stray cats in Downtown,environment,LOW
+26,Noise complaint (construction/event/neighbors),Noise complaint from construction site in West End,environment,MEDIUM
+27,Fallen tree / blocked sidewalk,Minor crack in sidewalk pavement on River Road,infrastructure,LOW
+28,Safety hazard (gas smell / exposed wires / sparks),Suggestion to improve online appointment booking,administrative,LOW
+29,Safety hazard (gas smell / exposed wires / sparks),Request to place litter bin near Main Square,sanitation,LOW
+30,Fallen tree / blocked sidewalk,Tree branches obstructing sidewalk near Main Square,environment,MEDIUM
+31,Fallen tree / blocked sidewalk,Suggestion to improve online appointment booking,administrative,LOW
+32,Noise complaint (construction/event/neighbors),Noise complaint from construction site in University Area,environment,MEDIUM
+33,Sewage overflow / bad drainage,Blocked drainage after rain near General Hospital,infrastructure,MEDIUM
+34,Water leakage / pipe burst,Minor crack in sidewalk pavement on Corso Italia,infrastructure,LOW
+35,Safety hazard (gas smell / exposed wires / sparks),Repeated complaints about slow service at municipal office Sports Complex,administrative,MEDIUM
+36,Water leakage / pipe burst,"No water supply in Old Town since morning, urgent intervention",utilities,HIGH
+37,Fallen tree / blocked sidewalk,Suggestion to plant more trees in City Hall,environment,LOW
+38,Bridge / wall structural damage,Vandalism reported on public wall near Train Station,vandalism,MEDIUM
+39,Traffic light malfunction,Request to fix loose paving stones at General Hospital,infrastructure,LOW
+40,Street light not working,Street light not working on Oak Street,lighting,MEDIUM
+41,Road collapse / sinkhole,"Collapsed retaining wall near General Hospital, risk of landslide",infrastructure,HIGH
+42,Water leakage / pipe burst,Request to update public notice board at Bus Terminal,administrative,MEDIUM
+43,Water leakage / pipe burst,"No water supply in North District since morning, urgent intervention",utilities,HIGH
+44,"Public property damage (bench, fence, playground)",Suggestion to add more benches in Riverside Walk,public_property,LOW
+45,Noise complaint (construction/event/neighbors),Noise complaint from construction site in North District,environment,MEDIUM
+46,Missing / damaged traffic sign,Street name sign slightly damaged on River Road,traffic,LOW
+47,Road pothole / surface damage,Small pothole in residential street Viale Europa,infrastructure,LOW
+48,Traffic light malfunction,Traffic accident reported due to signal outage at Station junction,traffic,HIGH
+49,Traffic light malfunction,Traffic signal malfunction caused near-miss at Central intersection,traffic,HIGH
+50,Bridge / wall structural damage,Request to update public notice board at General Hospital,administrative,MEDIUM
+51,Traffic light malfunction,Request to add speed bump near Primary School,traffic,LOW
+52,Missing / damaged traffic sign,"Electrical outage affecting South District, critical services impacted",utilities,HIGH
+53,"Public property damage (bench, fence, playground)",Broken bench in Market Area,public_property,MEDIUM
+54,Noise complaint (construction/event/neighbors),Noise complaint from construction site in East Side,environment,MEDIUM
+55,Accident risk hazard on road,Request to replace decorative lights in Community Center,lighting,LOW
+56,Water leakage / pipe burst,"Water contamination suspected in Industrial Zone, residents reporting illness",utilities,HIGH
+57,Illegal dumping / waste on street,Public fountain not working at Sports Complex,public_property,MEDIUM
+58,Fallen tree / blocked sidewalk,Debris blocking bicycle lane on Oak Street,traffic,MEDIUM
+59,Water leakage / pipe burst,Public fountain not working at Community Center,public_property,MEDIUM
+60,Fallen tree / blocked sidewalk,"Construction cones left on Market Street, causing congestion",traffic,MEDIUM
+61,Sewage overflow / bad drainage,"Sewage overflow spreading on Via Roma, health risk",infrastructure,HIGH
+62,Water leakage / pipe burst,Water main rupture flooding multiple streets near Riverside Walk,infrastructure,HIGH
+63,Road pothole / surface damage,Small pothole in residential street Hill Street,infrastructure,LOW
+64,"Public property damage (bench, fence, playground)",Request to repaint public benches in Market Area,public_property,LOW
+65,Bridge / wall structural damage,Request for updated bus schedule display at Riverside Walk,administrative,LOW
+66,Road collapse / sinkhole,Question about waste sorting rules in Industrial Zone,administrative,LOW
+67,Garbage collection missed / delayed,Garbage pickup missed in South District this week,sanitation,MEDIUM
+68,Fallen tree / blocked sidewalk,Minor crack in sidewalk pavement on Oak Street,infrastructure,LOW
+69,Fallen tree / blocked sidewalk,Tree branches obstructing sidewalk near Market Area,environment,MEDIUM
+70,Stray animals causing disturbance,Request to place litter bin near General Hospital,sanitation,LOW
+71,Garbage collection missed / delayed,Suggestion to repaint crosswalk lines on Main Avenue,traffic,LOW
+72,Missing / damaged traffic sign,Damaged public sign due to vandalism at Market Area,vandalism,MEDIUM
+73,Fallen tree / blocked sidewalk,Tree fallen blocking ambulance route to City Hall,safety,HIGH
+74,Fallen tree / blocked sidewalk,"Several streetlights out in Riverside, visibility reduced",lighting,MEDIUM
+75,Flooding after rain / blocked drains,Railway crossing barriers not working at Market junction,traffic,HIGH
+76,Road pothole / surface damage,Small pothole in residential street Oak Street,infrastructure,LOW
+77,Missing / damaged traffic sign,Street name sign slightly damaged on Hill Street,traffic,LOW
+78,Road collapse / sinkhole,Minor crack in building facade at Public Library,public_property,LOW
+79,Street light not working,Street light not working on Main Avenue,lighting,MEDIUM
+80,Garbage collection missed / delayed,Garbage collection delayed by one day in Old Town,sanitation,LOW
+81,Water leakage / pipe burst,Emergency exit blocked in public building at Main Square,safety,HIGH
+82,Water leakage / pipe burst,"Water contamination suspected in Riverside, residents reporting illness",utilities,HIGH
+83,Flooding after rain / blocked drains,"Flooded metro entrance at Market Area, access blocked",infrastructure,HIGH
+84,Street light flickering / low visibility,Streetlight flickering intermittently on Main Avenue,lighting,MEDIUM
+85,"Public property damage (bench, fence, playground)",Broken bench in Train Station,public_property,MEDIUM
+86,Sewage overflow / bad drainage,"Sewage overflow spreading on Oak Street, health risk",infrastructure,HIGH
+87,Water leakage / pipe burst,"Water contamination suspected in West End, residents reporting illness",utilities,HIGH
+88,Flooding after rain / blocked drains,"Flooded metro entrance at Train Station, access blocked",infrastructure,HIGH
+89,Street light not working,Street light not working on Main Avenue,lighting,MEDIUM
+90,Flooding after rain / blocked drains,Request for updated bus schedule display at Train Station,administrative,LOW
+91,Bridge / wall structural damage,Vandalism reported on public wall near Market Area,vandalism,MEDIUM
+92,Water leakage / pipe burst,"Water contamination suspected in Old Town, residents reporting illness",utilities,HIGH
+93,Bridge / wall structural damage,Bridge showing visible structural cracks near Sports Complex,infrastructure,HIGH
+94,"Public property damage (bench, fence, playground)",Broken bench in Public Library,public_property,MEDIUM
+95,Safety hazard (gas smell / exposed wires / sparks),Electrical sparks from transformer near Central Park,safety,HIGH
+96,Missing / damaged traffic sign,Traffic sign missing at Hospital junction,traffic,MEDIUM
+97,Noise complaint (construction/event/neighbors),Emergency exit blocked in public building at Main Square,safety,HIGH
+98,Flooding after rain / blocked drains,"Severe flooding in underpass at Public Library, vehicles stuck",infrastructure,HIGH
+99,Traffic light malfunction,"Major traffic light failure at Central intersection, risk of accidents",traffic,HIGH
+100,Street light not working,Request for additional street lighting in University Area,lighting,LOW
+101,Street light not working,Suggestion to improve online appointment booking,administrative,LOW
+102,Street light flickering / low visibility,Streetlight flickering intermittently on River Road,lighting,MEDIUM
+103,"Public property damage (bench, fence, playground)",Broken bench in Bus Terminal,public_property,MEDIUM
+104,Vandalism / graffiti,Graffiti on bus stop shelter at Train Station,vandalism,MEDIUM
+105,Garbage collection missed / delayed,Complaint about stray cats in West End,environment,LOW
+106,Overflowing bins / dirty public area,Request to place litter bin near Central Park,sanitation,LOW
+107,"Public property damage (bench, fence, playground)",Inquiry about parking permit process for residents in Downtown,administrative,LOW
+108,Accident risk hazard on road,"Electrical outage affecting West End, critical services impacted",utilities,HIGH
+109,Vandalism / graffiti,Graffiti on bus stop shelter at Train Station,vandalism,MEDIUM
+110,Fallen tree / blocked sidewalk,"Construction cones left on Market Street, causing congestion",traffic,MEDIUM
+111,Bridge / wall structural damage,"Electrical outage affecting East Side, critical services impacted",utilities,HIGH
+112,Water leakage / pipe burst,"Water contamination suspected in South District, residents reporting illness",utilities,HIGH
+113,Water leakage / pipe burst,Water leakage in public restroom at General Hospital,infrastructure,MEDIUM
+114,Illegal dumping / waste on street,"Electrical outage affecting North District, critical services impacted",utilities,HIGH
+115,Missing / damaged traffic sign,Public square lighting malfunction at Community Center,lighting,MEDIUM
+116,Street light not working,Request for additional street lighting in Industrial Zone,lighting,LOW
+117,Safety hazard (gas smell / exposed wires / sparks),"Gas smell reported in Market Area, possible leak",safety,HIGH
+118,Safety hazard (gas smell / exposed wires / sparks),"Gas leak detected near Bus Terminal, evacuations needed",safety,HIGH
+119,Accident risk hazard on road,Request for additional recycling bin in Train Station,sanitation,LOW
+120,Flooding after rain / blocked drains,"Severe flooding in underpass at Sports Complex, vehicles stuck",infrastructure,HIGH
+121,"Public property damage (bench, fence, playground)",Playground equipment damaged at Sports Complex,public_property,MEDIUM
+122,Stray animals causing disturbance,Repeated complaints about slow service at municipal office City Hall,administrative,MEDIUM
+123,Safety hazard (gas smell / exposed wires / sparks),Railway crossing barriers not working at City Hall junction,traffic,HIGH
+124,Flooding after rain / blocked drains,"Electrical outage affecting University Area, critical services impacted",utilities,HIGH
+125,Noise complaint (construction/event/neighbors),Noise complaint from construction site in Riverside,environment,MEDIUM
+126,Sewage overflow / bad drainage,Request for additional recycling bin in Sports Complex,sanitation,LOW
+127,Stray animals causing disturbance,"Stray dogs reported near Market Area, safety concerns",environment,MEDIUM
+128,Road collapse / sinkhole,Emergency exit blocked in public building at Bus Terminal,safety,HIGH
+129,Bridge / wall structural damage,Request to update public notice board at Primary School,administrative,MEDIUM
+130,"Public property damage (bench, fence, playground)",Request to repaint public benches in Bus Terminal,public_property,LOW
+131,Water leakage / pipe burst,Water main rupture flooding multiple streets near Sports Complex,infrastructure,HIGH
+132,Water leakage / pipe burst,"No water supply in East Side since morning, urgent intervention",utilities,HIGH
+133,Stray animals causing disturbance,"Stray dogs reported near Community Center, safety concerns",environment,MEDIUM
+134,Water leakage / pipe burst,Burst hydrant creating flooding near Market Area,utilities,HIGH
+135,Fallen tree / blocked sidewalk,Suggestion to plant more trees in Sports Complex,environment,LOW
+136,Traffic light malfunction,"Major traffic light failure at Roundabout A3, risk of accidents",traffic,HIGH
+137,Safety hazard (gas smell / exposed wires / sparks),Railway crossing barriers not working at Station junction,traffic,HIGH
+138,Traffic light malfunction,Traffic accident reported due to signal outage at Roundabout A3,traffic,HIGH
+139,Flooding after rain / blocked drains,"Severe flooding in underpass at City Hall, vehicles stuck",infrastructure,HIGH
+140,Sewage overflow / bad drainage,"Sewage overflow spreading on Main Avenue, health risk",infrastructure,HIGH
+141,Fallen tree / blocked sidewalk,Tree branches obstructing sidewalk near Main Square,environment,MEDIUM
+142,Sewage overflow / bad drainage,"Fire alarm triggered in Main Square, smoke seen",safety,HIGH
+143,Traffic light malfunction,Traffic signal malfunction caused near-miss at Central intersection,traffic,HIGH
+144,Bridge / wall structural damage,Bridge showing visible structural cracks near General Hospital,infrastructure,HIGH
+145,Safety hazard (gas smell / exposed wires / sparks),"Gas leak detected near Bus Terminal, evacuations needed",safety,HIGH
+146,Flooding after rain / blocked drains,Request to fix loose paving stones at Public Library,infrastructure,LOW
+147,Flooding after rain / blocked drains,"Severe flooding in underpass at Community Center, vehicles stuck",infrastructure,HIGH
+148,Traffic light malfunction,Traffic signal malfunction caused near-miss at Market junction,traffic,HIGH
+149,Vandalism / graffiti,Graffiti on bus stop shelter at Community Center,vandalism,MEDIUM
+150,Fallen tree / blocked sidewalk,Tree branches obstructing sidewalk near Riverside Walk,environment,MEDIUM
+151,Traffic light malfunction,Traffic signal malfunction caused near-miss at Roundabout A3,traffic,HIGH
+152,Traffic light malfunction,Repeated complaints about slow service at municipal office Sports Complex,administrative,MEDIUM
+153,"Public property damage (bench, fence, playground)",Request to repaint public benches in Public Library,public_property,LOW
+154,"Public property damage (bench, fence, playground)",Request for updated bus schedule display at Public Library,administrative,LOW
+155,Overflowing bins / dirty public area,Minor crack in sidewalk pavement on Via Roma,infrastructure,LOW
+156,Vandalism / graffiti,Debris blocking bicycle lane on Corso Italia,traffic,MEDIUM
+157,Road pothole / surface damage,Small pothole in residential street Oak Street,infrastructure,LOW
+158,Safety hazard (gas smell / exposed wires / sparks),Minor crack in sidewalk pavement on Main Avenue,infrastructure,LOW
+159,"Public property damage (bench, fence, playground)","Construction cones left on Viale Europa, causing congestion",traffic,MEDIUM
+160,Overflowing bins / dirty public area,Emergency exit blocked in public building at General Hospital,safety,HIGH
+161,Traffic light malfunction,Complaint about stray cats in Riverside,environment,LOW
+162,Traffic light malfunction,Traffic accident reported due to signal outage at Central intersection,traffic,HIGH
+163,Noise complaint (construction/event/neighbors),Noise complaint from construction site in Old Town,environment,MEDIUM
+164,Missing / damaged traffic sign,Street name sign slightly damaged on Oak Street,traffic,LOW
+165,Street light not working,Question about waste sorting rules in South District,administrative,LOW
+166,"Public property damage (bench, fence, playground)",Broken bench in City Hall,public_property,MEDIUM
+167,Sewage overflow / bad drainage,"Sewage overflow spreading on Via Roma, health risk",infrastructure,HIGH
+168,Missing / damaged traffic sign,Street name sign slightly damaged on Market Street,traffic,LOW
+169,Overflowing bins / dirty public area,Trash scattered around collection area in North District,sanitation,MEDIUM
+170,Safety hazard (gas smell / exposed wires / sparks),"Gas leak detected near Riverside Walk, evacuations needed",safety,HIGH
+171,Water leakage / pipe burst,Request to install a drinking water fountain in Bus Terminal,public_property,LOW
+172,Noise complaint (construction/event/neighbors),Public fountain not working at Sports Complex,public_property,MEDIUM
+173,Road pothole / surface damage,Question about waste sorting rules in University Area,administrative,LOW
+174,Illegal dumping / waste on street,Minor crack in building facade at City Hall,public_property,LOW
+175,Noise complaint (construction/event/neighbors),Noise complaint from construction site in Industrial Zone,environment,MEDIUM
+176,Overflowing bins / dirty public area,Public fountain not working at Community Center,public_property,MEDIUM
+177,Road pothole / surface damage,"Construction cones left on Viale Europa, causing congestion",traffic,MEDIUM
+178,Fallen tree / blocked sidewalk,Tree fallen blocking ambulance route to Train Station,safety,HIGH
+179,Road pothole / surface damage,Small pothole in residential street Main Avenue,infrastructure,LOW
+180,Safety hazard (gas smell / exposed wires / sparks),"Gas smell reported in Primary School, possible leak",safety,HIGH
+181,Missing / damaged traffic sign,Fire reported in public building at Primary School,safety,HIGH
+182,Garbage collection missed / delayed,Garbage collection delayed by one day in Old Town,sanitation,LOW
+183,Stray animals causing disturbance,Public fountain not working at General Hospital,public_property,MEDIUM
+184,Vandalism / graffiti,Minor crack in sidewalk pavement on Main Avenue,infrastructure,LOW
+185,Noise complaint (construction/event/neighbors),Emergency exit blocked in public building at City Hall,safety,HIGH
+186,Traffic light malfunction,Traffic signal malfunction caused near-miss at City Hall junction,traffic,HIGH
+187,Road collapse / sinkhole,"Road collapse reported near Bus Terminal, traffic blocked",infrastructure,HIGH
+188,Missing / damaged traffic sign,Emergency exit blocked in public building at Public Library,safety,HIGH
+189,Street light not working,Street light not working on Main Avenue,lighting,MEDIUM
+190,Sewage overflow / bad drainage,Complaint about stray cats in University Area,environment,LOW
+191,Street light flickering / low visibility,Public fountain not working at Bus Terminal,public_property,MEDIUM
+192,Garbage collection missed / delayed,Request information about office opening hours at Central Park,administrative,LOW
+193,Fallen tree / blocked sidewalk,Debris blocking bicycle lane on Oak Street,traffic,MEDIUM
+194,Missing / damaged traffic sign,Street name sign slightly damaged on Hill Street,traffic,LOW
+195,Water leakage / pipe burst,"Water contamination suspected in East Side, residents reporting illness",utilities,HIGH
+196,Safety hazard (gas smell / exposed wires / sparks),Request to replace decorative lights in Central Park,lighting,LOW
+197,Traffic light malfunction,Traffic signal malfunction caused near-miss at Hospital junction,traffic,HIGH
+198,Noise complaint (construction/event/neighbors),Noise complaint about loud music at event in Community Center,environment,LOW
+199,Street light flickering / low visibility,Streetlight flickering intermittently on Station Road,lighting,MEDIUM
+200,"Public property damage (bench, fence, playground)",Request to repaint public benches in Central Park,public_property,LOW
