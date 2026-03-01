@@ -5,10 +5,10 @@
 Master’s in Data Science
 University of Naples Federico II
 
-## 1. Abstract
+### 1. Abstract
 
 This project presents a production-style AI-assisted municipal complaint prioritization system integrating supervised machine learning within an operational decision workflow.
-The system processes free-text citizen complaints, generates priority predictions (LOW, MEDIUM, HIGH), and embeds them inside a controlled human-in-the-loop validation pipeline. Final decisions remain under human authority, ensuring governance, accountability, and responsible AI deployment.
+The system processes free-text citizen complaints, generates priority predictions (LOW, MEDIUM, HIGH), and embeds them inside a structured human-in-the-loop validation pipeline. Final decisions remain under human authority to ensure governance, accountability, and responsible AI deployment.
 The contribution of this project is not merely a classifier, but a fully integrated AI system including:
 
 * RESTful backend architecture
@@ -18,54 +18,54 @@ The contribution of this project is not merely a classifier, but a fully integra
 * Governance metrics and audit logging
 * Reproducible demo deployment
 
-## 3. System Objectives
-The system aims to:
-1. Process unstructured complaint text
-2. Automatically classify complaint priority
-3. Provide probabilistic confidence estimates
-4. Enable human validation and override
-5. Track ticket lifecycle through structured states
-6. Monitor model reliability using override metrics
-7. Provide a reproducible full-stack demo
+### 2. System Objectives
 
-4. System Architecture
+The system aims to:
+* Process unstructured complaint text
+* Automatically classify complaint priority
+* Provide probabilistic confidence estimates
+* Enable human validation and override
+* Track ticket lifecycle through structured workflow states
+* Monitor model reliability using override metrics
+* Provide a reproducible full-stack demonstration
+
+### 3. System Architecture
 
 Citizen Portal (Streamlit)
-↓
-FastAPI Backend (REST API Layer)
-↓
-SQLite Database
-↓
-Machine Learning Model (TF-IDF + Logistic Regression)
+    → FastAPI Backend (REST API)
+        → SQLite Database
+            → ML Model (TF-IDF + Logistic Regression)
 
 The architecture follows a layered separation of concerns:
+* Presentation layer (Frontend)
+* API and business logic layer (Backend)
+* Data persistence layer (Database)
+* ML inference module
 
-Presentation layer (frontend)
-API/business logic layer (backend)
-Data persistence layer (database)
-ML inference module
+The machine learning component is embedded within a REST architecture and is not deployed as an isolated script.
 
-The ML component is embedded within a REST architecture and is not isolated as a standalone script.
+## 4. Core Components
+### 4.1 Frontend (Streamlit)
 
-## 5. Core Components
-## 5.1 Frontend (Streamlit)
-Two operational interfaces:
+Two operational interfaces are implemented.
 
-### Citizen Portal
+#### Citizen Portal
 * Submit complaint
 * Automatic AI prediction
 * Track ticket progress
-* View workflow state
+* View workflow status
 
-### Office Portal
-* Ticket inbox
+#### Office Portal
+* View ticket inbox
 * Run prediction manually
 * Validate or override AI output
 * Update workflow status
-* Monitor override rate and audit table
-* The frontend consumes backend APIs and contains no ML logic.
+* Monitor override rate and review audit table
+  
+The frontend consumes backend APIs and does not contain ML logic.
 
-## 5.2 Backend (FastAPI)
+### 4.2 Backend (FastAPI)
+
 The backend exposes structured REST endpoints grouped into domains:
 * System
 * Tickets
@@ -74,53 +74,53 @@ The backend exposes structured REST endpoints grouped into domains:
 * Workflow
 * Metrics
 
-### Responsibilities:
+Responsibilities include:
 * Ticket creation
 * Model inference
 * Human review handling
 * Workflow state transitions
 * Metric computation
 * Audit trail management
-* Swagger documentation is available for interactive testing.
 
-### 5.3 Database (SQLite)
+Interactive API documentation is available via Swagger.
 
-Three primary tables:
-Tickets
+### 4.3 Database (SQLite)
+
+Three primary tables are implemented.
+##### Tickets
 Stores complaint data and workflow status.
-Predictions
 
-### Stores AI outputs including:
-Predicted label
-Confidence score
-Model version
-Timestamp
-Reviews
+##### Predictions
+Stores AI outputs including:
+* Predicted label
+* Confidence score
+* Model version
+* Timestamp
 
-### Stores human validation decisions including:
+#### Reviews
+* Stores human validation decisions including:
+* Final label
+* Reviewer ID
+* Timestamp
+* Optional comment
 
-Final label
-Reviewer ID
-Timestamp
-Optional comment
+This structure ensures traceability and reproducibility of decisions.
 
-This structure ensures traceability and reproducibility.
-
-## 6. Machine Learning Component
-Model Choice
+### 5. Machine Learning Component
+#### Model Choice
 TF-IDF Vectorization
 Logistic Regression Classifier
 
-### Reasons for selection:
-Efficient for sparse text data
-Fast inference
-Probabilistic output via predict_proba
-Suitable for production-level deployment
-Interpretable and lightweight
+##### Reasons for Selection
+* Efficient for sparse text data
+* Fast inference time
+* Probabilistic output via predict_proba
+* Suitable for lightweight production deployment
+* Interpretable and computationally efficient
 
-The ML model transforms unstructured complaint text into structured priority signals.
+The ML model transforms unstructured complaint text into structured decision-support signals.
 
-### Example Output
+#### Example Output
 {
   "ticket_id": 1,
   "predicted_label": "HIGH",
@@ -129,34 +129,26 @@ The ML model transforms unstructured complaint text into structured priority sig
 
 Confidence values support risk-aware human oversight.
 
-## 7. Human-in-the-Loop Design
+### 6. Human-in-the-Loop Design
 
-The system enforces a controlled decision pipeline:
+The system enforces a structured decision pipeline:
 
-NEW
-→ REVIEWED
-→ IN_PROGRESS
-→ COMPLETED
+NEW → REVIEWED → IN_PROGRESS → COMPLETED
 
-AI predictions are advisory only.
+AI predictions are advisory only. Human reviewers must validate or override the prediction before workflow progression. Overrides are explicitly recorded and measurable.
 
-Human reviewers must validate or override the prediction before workflow progression.
+This design ensures:
+* Accountability
+* Transparency
+* Responsible AI usage
+* Governance compliance
 
-Overrides are explicitly recorded and measurable.
 
-This ensures:
-Accountability
-Transparency
-Responsible AI usage
-Governance compliance
-
-### 8. Monitoring & Governance
+### 7. Monitoring & Governance
 Override Rate
 
-override_rate= (AI ≠Human) / Total Reviewed
-
+override_rate = (AI ≠ Human decisions) / Total reviewed tickets
 This metric measures alignment between model predictions and human decisions.
-
 The system maintains:
 * Full audit logs
 * Prediction history
@@ -164,7 +156,7 @@ The system maintains:
 * Workflow transparency
 * Model version tracking
 
-** 9. Project Structure
+#### 8. Project Structure
 municipality-ai-system/
 │
 ├── backend/
@@ -180,102 +172,84 @@ municipality-ai-system/
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
-10. Installation
 
-** Install required dependencies:
+### 9. Installation
 
+Install required dependencies:
 pip install fastapi uvicorn streamlit scikit-learn joblib
-11. Running the System
+
+### 10. Running the System
 All commands should be executed from the project root:
 
 C:\Users\nazis\Desktop\municipality-ai-system
-* Start Backend
+### Start Backend
 uvicorn backend.main:app --reload
 
-Swagger documentation:
+### Swagger documentation:
 
 http://127.0.0.1:8000/docs
-* Start Frontend
-
-Open a new terminal and run: 
-cd frontend
-streamlit run app.py
-
+#### Start Frontend
+Open a new terminal and run:
+streamlit run frontend/app.py
 Streamlit will open at:
 
 http://localhost:8501
 
-### 12. API Overview
-System
+#### 11. API Overview
+### System
 GET /health
-
-Tickets
+### Tickets
 
 POST /tickets
 GET /tickets/inbox
 GET /tickets/{ticket_id}
 DELETE /tickets/{ticket_id}
 
-ML
+### ML
 
 POST /tickets/{ticket_id}/predict
 
-Review
+### Review
 
 POST /tickets/{ticket_id}/review
 
-Workflow
+### Workflow
 
 PATCH /tickets/{ticket_id}/status
 
-Metrics
+### Metrics
 
 GET /metrics/override_rate
 GET /metrics/review_audit
 
-13. Non-Functional Requirements
+### 12. Non-Functional Requirements
 
 The system addresses:
+* Reliability (transaction-based database operations)
+* Transparency (confidence visibility)
+* Traceability (audit logging)
+* Maintainability (modular architecture)
+* Governance (mandatory human validation)
 
-Reliability (transaction-based DB operations)
+### 13. Limitations
 
-Transparency (confidence visibility)
+* Prototype-level deployment
+* SQLite database (not distributed)
+* No authentication layer
+* No automated retraining pipeline
+* No drift detection mechanism
 
-Traceability (audit logs)
+###14. Future Improvements
+    
+* JWT authentication
+* Role-based access control
+* Model drift monitoring
+* Automated retraining
+* Cloud deployment
+* Docker containerization
+* Real-time analytics dashboard
 
-Maintainability (modular architecture)
-
-Governance (mandatory human validation)
-
-14. Limitations
-
-Prototype-level deployment
-
-SQLite database (not distributed)
-
-No authentication layer
-
-No automated retraining pipeline
-
-No drift detection
-
-15. Future Improvements
-
-JWT authentication
-
-Role-based access control
-
-Model drift monitoring
-
-Automated retraining
-
-Cloud deployment
-
-Docker containerization
-
-Real-time analytics dashboard
-
-### 16. Academic Relevance
+### 15. Academic Relevance
 
 This project demonstrates:
 * Supervised learning integration
@@ -284,5 +258,6 @@ This project demonstrates:
 * Workflow engineering
 * Monitoring and governance metrics
 * End-to-end AI system deployment
-  
+
 It reflects AI Systems Engineering principles by integrating modeling, architecture, decision control, and system-level monitoring within a unified operational framework.
+
