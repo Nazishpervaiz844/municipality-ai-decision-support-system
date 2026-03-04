@@ -1,0 +1,21 @@
+Model Version: v1-tfidf-logreg
+
+Dataset: C:\Users\nazis\Desktop\municipality-ai-system\ml\municipal_complaints_200_with_titles.csv
+Train/Test split: 80/20 | random_state=42 | stratified
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        HIGH     0.9286    0.9286    0.9286        14
+         LOW     0.9286    1.0000    0.9630        13
+      MEDIUM     0.9167    0.8462    0.8800        13
+
+    accuracy                         0.9250        40
+   macro avg     0.9246    0.9249    0.9238        40
+weighted avg     0.9247    0.9250    0.9240        40
+
+
+Confusion Matrix (rows=true, cols=pred):
+[[13  0  0]
+ [ 1 11  1]
+ [ 0  1 13]]

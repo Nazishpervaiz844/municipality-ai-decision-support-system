@@ -289,17 +289,17 @@ with tab2:
             confirmed_only = [r for r in cleaned if r["Result"] == "— Confirmed"]
 
             if filter_choice == "All":
-                st.dataframe(cleaned, use_container_width=True, hide_index=True)
+                st.dataframe(cleaned, width= "stretch", hide_index=True)
             elif filter_choice == "Overrides":
                 if overrides_only:
                     st.error(f"Overrides detected: {len(overrides_only)}")
-                    st.dataframe(overrides_only, use_container_width=True, hide_index=True)
+                    st.dataframe(overrides_only, width= "stretch", hide_index=True)
                 else:
                     st.success("No overrides so far.")
             else:  # Confirmed
                 if confirmed_only:
                     st.success(f"Confirmed predictions: {len(confirmed_only)}")
-                    st.dataframe(confirmed_only, use_container_width=True, hide_index=True)
+                    st.dataframe(confirmed_only, width= "stretch", hide_index=True)
                 else:
                     st.info("No confirmed predictions yet.")
 
