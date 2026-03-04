@@ -1,182 +1,282 @@
-## Municipality AI Decision Support System
-## AI Systems Engineering Project
-Nazish Pervaiz Gill
-D03000191
-Course: AI Systems Engineering
-Exam Session: March 13
-GitHub Link : https://github.com/Nazishpervaiz844/municipality-ai-decision-support-system
+### Municipality AI Decision Support System
+### AI Systems Engineering – Innovation Project
+
+Author: Nazish Pervaiz Gill
+Master’s in Data Science
 University of Naples Federico II
 
-## Abstract
+### Project Overview
+This project implements an AI-assisted municipal complaint prioritization system that helps local administrations manage citizen complaints efficiently.
+The system processes free-text complaints submitted by citizens and automatically predicts a priority level (LOW, MEDIUM, HIGH) using a machine learning model based on TF-IDF vectorization and Logistic Regression.
+The prediction is integrated into a human-in-the-loop decision workflow, where municipal staff review and confirm or override the AI suggestion before the complaint proceeds through the operational workflow.
+This design demonstrates how machine learning can be embedded into a real-world decision support system while maintaining transparency, accountability, and governance.
 
-This project presents an AI-assisted municipal complaint management system integrating machine learning within an operational decision workflow. The system classifies free-text citizen complaints into priority levels (LOW, MEDIUM, HIGH) using a supervised learning model and incorporates human validation to ensure accountability, governance, and reliability.
-
-The architecture demonstrates end-to-end AI system integration, including model inference, human-in-the-loop validation, workflow orchestration, and performance monitoring.
-
-## Objective
-
-To design and implement a production-style AI-enabled decision support system that:
-
-Processes unstructured textual input
-
-Performs automated priority classification
-
-Integrates human oversight
-
-Tracks workflow states
-
-Monitors model reliability through override metrics
-
-## System Architecture
+### System Architecture
+The system follows a layered architecture typical for production AI applications.
 
 Citizen Portal (Streamlit)
-↓
+        ↓
 FastAPI Backend (REST API)
-↓
+        ↓
 SQLite Database
-↓
-Machine Learning Model (TF-IDF + Logistic Regression)
+        ↓
+Machine Learning Model
+(TF-IDF + Logistic Regression)
+Components
 
-The ML component is embedded within a structured REST architecture, not isolated as a standalone script.
+#### Frontend
+Built using Streamlit
+Citizen portal for submitting complaints
+Office portal for reviewing and validating AI predictions
 
-## AI Component
-## Model
+#### Backend
+Built with FastAPI
+Handles ticket creation, prediction, workflow updates, and metrics
 
-TF-IDF vectorization
+#### Database
+SQLite database storing complaints, predictions, and reviews
+
+#### Machine Learning Module
+TF-IDF feature extraction
 
 Logistic Regression classifier
 
-Probabilistic output via predict_proba
+Saved model artifacts used by the backend for inference
 
-Output
+#### Key Features
 
-Predicted priority label
+* Citizen complaint submission interface
+* Automatic AI-based priority prediction
+* Prediction confidence score
+* Human validation and override capability
+* Structured ticket workflow management
+* Monitoring metrics (override rate)
+* REST API architecture
+* Reproducible machine learning training pipeline
 
-Confidence score
+#### Dataset
 
-Model version tracking
+Dataset file:
 
-This transforms unstructured complaint text into structured decision support signals.
+ml/municipal_complaints_200_with_titles.csv
 
-Run the System
-# Start Backend
-uvicorn backend.main:app --reload
+#### Dataset characteristics:
+* 200 labeled municipal complaints
+* Balanced priority classes
 
-Open Swagger UI:
+#### Text fields:
+* complaint_title
+* complaint_description
+* category
 
-http://127.0.0.1:8000/docs
-# Start Frontend
-cd frontend
-streamlit run app.py
+#### Target label:
+priority (LOW / MEDIUM / HIGH)
 
-## API Endpoints
-System
+#### Training input combines:
+category + complaint_title + complaint_description
 
-GET /health
+This provides richer contextual information for classification.
 
-# Tickets
+### Machine Learning Model
+#### Feature Extraction
 
-POST /tickets
+TF-IDF (Term Frequency – Inverse Document Frequency)
 
-GET /tickets/inbox
+#### Classifier
 
-GET /tickets/{ticket_id}
+Logistic Regression
 
-DELETE /tickets/{ticket_id}
+The model transforms complaint text into numerical features and predicts the most likely priority category.
 
-# ML
+Example prediction output:
 
-POST /tickets/{ticket_id}/predict
-
-
-# Review
-
-POST /tickets/{ticket_id}/review
-
-# Workflow
-
-PATCH /tickets/{ticket_id}/status
-
-# Metrics
-
-GET /metrics/override_rate
-
-GET /metrics/review_audit
-
-### Example ML Output
 {
-  "ticket_id": 1,
+  "ticket_id": 4,
   "predicted_label": "HIGH",
-  "confidence": 0.87
+  "confidence": 0.48
 }
+#### Model Training
 
-## Human-in-the-Loop Design
+Training script:
 
-The system enforces a controlled decision pipeline:
+ml/train_model.py
+
+##### Training pipeline:
+* Load complaint dataset
+* Combine category, title, and description
+* Perform stratified 80/20 train-test split
+* Convert text into TF-IDF feature vectors
+* Train Logistic Regression classifier
+* Evaluate model performance
+* Save trained model artifacts
+
+##### Saved artifacts:
+ml/priority_model.pkl
+ml/vectorizer.pkl
+
+These files are loaded by the backend for runtime prediction.
+
+### Model Evaluation
+Evaluation metrics used:
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion Matrix
+
+Model performance on test set:
+
+Accuracy: 92.5%
+
+Evaluation artifacts:
+
+ml/outputs/classification_report.txt
+ml/outputs/confusion_matrix.png
+
+#### Human-in-the-Loop Workflow
+
+The system implements a structured complaint lifecycle:
 
 NEW → REVIEWED → IN_PROGRESS → COMPLETED
 
-AI output is advisory only.
+AI predictions are advisory only.
+Municipal staff must validate or override the prediction before the complaint progresses through the workflow.
+Overrides are recorded for transparency and monitoring.
 
-Municipal staff validate or override predictions.
+#### Monitoring and Governance
 
-Overrides are recorded and measurable.
+The system calculates an Override Rate:
 
-Governance metrics are computed (override rate).
+override_rate = (AI predictions overridden by humans) / total reviewed tickets
 
-This ensures responsible AI deployment.
+This metric helps monitor:
 
-### Monitoring & Governance
+* AI reliability
+* human disagreement with predictions
+* potential model drift
 
- ### Override Rate:
+*** Project Structure
+municipality-ai-system
+│
+├── backend
+│   ├── main.py
+│   ├── municipality.db
+│   └── requirements.txt
+│
+├── frontend
+│   ├── app.py
+│   └── requirements.txt
+│
+├── ml
+│   ├── municipal_complaints_200_with_titles.csv
+│   ├── train_model.py
+│   ├── priority_model.pkl
+│   ├── vectorizer.pkl
+│   └── outputs
+│       ├── classification_report.txt
+│       └── confusion_matrix.png
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
 
-override_rate = (AI ≠ Human decisions) / total reviewed tickets
+*** Installation
 
-This metric evaluates alignment between model predictions and human decisions.
+***** Install required dependencies:
 
-### The system maintains:
+pip install fastapi uvicorn streamlit scikit-learn pandas joblib matplotlib
 
-Full audit trail
+***** Running the System
 
-Prediction history
+Run commands from project root:
 
-Human review records
+municipality-ai-system
+*****Start Backend
+uvicorn backend.main:app --reload
 
-Workflow transparency
+Swagger API documentation:
 
-Technical Stack
+http://127.0.0.1:8000/docs
+*****Start Frontend
 
-FastAPI (Backend)
+Open a new terminal and run:
 
-Streamlit (Frontend)
+streamlit run frontend/app.py
 
-SQLite (Database)
+Application will open at:
 
-Scikit-learn (ML)
+http://localhost:8501
 
-Joblib (Model serialization)
+***** API Endpoints
 
-Academic Relevance
+****** System
 
-### This project demonstrates:
+GET /health
 
-Applied supervised learning for text classification
+****** Tickets
 
-AI system integration within operational workflows
+POST /tickets
+GET /tickets/inbox
+GET /tickets/{ticket_id}
+DELETE /tickets/{ticket_id}
 
-Human-centered AI architecture
+****** Machine Learning
 
-Model monitoring and governance design
+POST /tickets/{ticket_id}/predict
 
-RESTful API engineering
+****** Review
 
-Database-backed AI inference pipelines
+POST /tickets/{ticket_id}/review
 
-It aligns with AI Systems Engineering principles by integrating modeling, system architecture, decision control, and performance evaluation within a unified framework.
+****** Workflow
 
-### Author
+PATCH /tickets/{ticket_id}/status
+
+****** Metrics
+
+GET /metrics/override_rate
+GET /metrics/review_audit
+
+***** Ethical Considerations
+AI-based prioritization must consider:
+
+* fairness in complaint handling
+* transparency of decision support
+* accountability for final decisions
+* human oversight
+The system mitigates these concerns through:
+
+* mandatory human validation
+* visible confidence scores
+* override monitoring
+* audit logging
+
+**** Future Improvements
+
+Possible extensions include:
+* authentication and role-based access
+* automated model retraining pipeline
+* model drift detection
+* cloud deployment
+* analytics dashboard
+* multilingual complaint support
+
+**** Academic Context
+This project was developed for the AI Systems Engineering course and demonstrates how machine learning models can be integrated into operational decision support systems.
+The project covers:
+* data preparation
+* model training
+* evaluation
+* system architecture
+* backend integration
+* human-centered AI governance
+
+**** Author
 
 Nazish Pervaiz Gill
 Master’s in Data Science
 University of Naples Federico II
 
+**** License
+
+Academic project for educational purposes.
