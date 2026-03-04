@@ -29,7 +29,7 @@ TITLES = [
 
 
 # ----------------------------
-# Helpers
+# Helpers (HTTP)
 # ----------------------------
 def safe_get_json(url: str):
     r = requests.get(url, timeout=10)
@@ -49,6 +49,9 @@ def safe_patch_json(url: str, payload=None):
     return r.json()
 
 
+# ----------------------------
+# Helpers (UI formatting)
+# ----------------------------
 def confidence_badge(conf_value):
     """Returns: (emoji, pct_int, level_text)"""
     if conf_value is None:
@@ -180,7 +183,9 @@ with tab1:
                             else:
                                 st.write(f"AI suggested priority: **{predicted_label}**")
                                 st.write(f"Confidence: **{pct}%** ({level}) {emoji}")
-                                st.caption("Internal estimate to help staff. Official priority is validated by municipality staff.")
+                                st.caption(
+                                    "Internal estimate to help staff. Official priority is validated by municipality staff."
+                                )
                     except Exception as e:
                         st.warning(f"Ticket created, but prediction failed: {e}")
 
@@ -289,17 +294,19 @@ with tab2:
             confirmed_only = [r for r in cleaned if r["Result"] == "— Confirmed"]
 
             if filter_choice == "All":
-                st.dataframe(cleaned, width= "stretch", hide_index=True)
+                st.dataframe(cleaned, use_container_width=True, hide_index=True)
+
             elif filter_choice == "Overrides":
                 if overrides_only:
                     st.error(f"Overrides detected: {len(overrides_only)}")
-                    st.dataframe(overrides_only, width= "stretch", hide_index=True)
+                    st.dataframe(overrides_only, use_container_width=True, hide_index=True)
                 else:
                     st.success("No overrides so far.")
+
             else:  # Confirmed
                 if confirmed_only:
                     st.success(f"Confirmed predictions: {len(confirmed_only)}")
-                    st.dataframe(confirmed_only, width= "stretch", hide_index=True)
+                    st.dataframe(confirmed_only, use_container_width=True, hide_index=True)
                 else:
                     st.info("No confirmed predictions yet.")
 
@@ -399,6 +406,7 @@ with tab2:
 
             st.divider()
             st.markdown("### Workflow Status Update (Office)")
+
             current_status = (ticket.get("status") or "").upper().strip()
 
             next_status_map = {
